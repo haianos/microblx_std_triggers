@@ -97,8 +97,8 @@ install(EXPORT std-triggers-types-targets DESTINATION
   "${INSTALL_CMAKE_DIR}" COMPONENT dev)
   
 # Compile library ptrigmod
-add_library(ptrigmod SHARED /home/haianos/enea_microblx/std_triggers/ptrig/ptrig.c
-/home/haianos/enea_microblx/std_triggers/modules/ptrigmod_module.c
+add_library(ptrigmod SHARED ../ptrig/ptrig.c
+../modules/ptrigmod_module.c
 )
 set_target_properties(ptrigmod PROPERTIES PREFIX "")
 target_link_libraries(ptrigmod ${UBX_LIBRARIES})

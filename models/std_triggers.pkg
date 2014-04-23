@@ -10,7 +10,7 @@ return pkg
   },
   
   blocks = {
-    { name="ptrig", file="/home/haianos/enea_microblx/create_triggers/ptrig.blx", src_dir="ptrig" },
+    { name="ptrig", file="../models/ptrig.blx", src_dir="ptrig" },
   },
   
   libraries = {

@@ -1,0 +1,19 @@
+return pkg
+{
+  name="std_triggers",
+  path="../",
+  
+  types = {
+    { name="ptrig_config", dir="types" },
+    { name="ptrig_period", dir="types" },
+    { name="ptrig_tstat", dir="types" },
+  },
+  
+  blocks = {
+    { name="ptrig", file="/home/haianos/enea_microblx/create_triggers/ptrig.blx", src_dir="ptrig" },
+  },
+  
+  libraries = {
+    { name="ptrigmod", blocks={"ptrig"} },
+  },
+}

@@ -1,0 +1,31 @@
+return block
+{
+  name="ptrig",
+  meta_data="doc=pthread based trigger",
+  port_cache=true,
+
+  types = {
+    { name="ptrig_config", class='struct', doc= ""},
+    { name="ptrig_period", class='struct', doc= ""},
+    { name="ptrig_tstat", class='struct', doc= ""},
+  },
+
+  configurations= {
+    { name="period", type_name = "struct ptrig_period", doc="" },
+    { name="stacksize", type_name = "size_t", doc="" },
+    { name="sched_priority", type_name = "int", doc="" },
+    { name="sched_policy", type_name = "char", doc="" },
+    { name="thread_name", type_name = "char", doc="" },
+    { name="trig_blocks", type_name = "struct ptrig_config", doc="" },
+    { name="time_stats_enabled", type_name = "int", doc="" },
+  },
+
+  ports = {
+    -- define the ports for this block
+    { name="tstats", out_type_name="struct ptrig_tstat", doc="" },
+  },
+  
+  -- define which operations this block implements
+  operations = { start=true, stop=true },
+
+}

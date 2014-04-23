@@ -1,0 +1,18 @@
+# - Config file for the std_triggers package
+# It defines the following variables
+#  STD_TRIGGERS_TYPES_INCLUDE_DIRS - include directories for std_triggers_types
+#  STD_TRIGGERS_TYPES_LIBRARIES    - libraries to link against
+ 
+# Compute paths
+#get_filename_component(STD_TRIGGERS_TYPES_CMAKE_DIR "${STD_TRIGGERS_TYPES_CMAKE_DIR}" PATH)
+set(STD_TRIGGERS_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+set(STD_TRIGGERS_TYPES_CMAKE_DIR "@CONF_CMAKE_DIR@")
+
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+if(NOT TARGET std_triggers AND NOT STD_TRIGGERS_TYPES_BINARY_DIR)
+  include("${STD_TRIGGERS_TYPES_CMAKE_DIR}/std-triggers-types-targets.cmake")
+endif()
+ 
+# These are IMPORTED targets created by std-triggers-types-targets.cmake
+set(STD_TRIGGERS_TYPES_LIBRARIES std_triggers)
